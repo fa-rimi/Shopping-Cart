@@ -23,6 +23,9 @@
  *
  **/
 
+// how much money you have in your bank account
+let wallet = 7.50;
+
 // Initial value
 let cartQuantity = 0;
 console.log(cartQuantity);
@@ -52,3 +55,16 @@ reset.addEventListener("click", function () {
   cartQuantity = 0;
   console.log(`Cart Quantity: ${cartQuantity}`);
 });
+
+// Lets say you want to check the items out now
+const buy = document.getElementById("checkout");
+buy.addEventListener("click", function() {
+    // if the amount in your wallet is greater than or equal to the cart quantity (true)
+    if (wallet >= cartQuantity) {
+        // then your purchase will go through
+        console.log("Purchased Successfully");
+    } else { // else if its false
+        // you cant buy anything :(
+        console.log("Oh Oh, Did you get paid today?");
+    }
+})

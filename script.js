@@ -58,13 +58,17 @@ reset.addEventListener("click", function () {
 
 // Lets say you want to check the items out now
 const buy = document.getElementById("checkout");
+const successAudio = new Audio("audio/applepay.mp3");
+const failAudio = new Audio("audio/wrong.mp3")
 buy.addEventListener("click", function() {
     // if the amount in your wallet is greater than or equal to the cart quantity (true)
     if (wallet >= cartQuantity) {
         // then your purchase will go through
+        successAudio.play();
         console.log("Purchased Successfully");
     } else { // else if its false
         // you cant buy anything :(
+        failAudio.play();
         console.log("Oh Oh, Did you get paid today?");
     }
 })
